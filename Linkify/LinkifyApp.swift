@@ -1,10 +1,3 @@
-//
-//  LinkifyApp.swift
-//  Linkify
-//
-//  Created by Florian Merlau on 28.02.25.
-//
-
 import SwiftUI
 import SwiftData
 
@@ -12,7 +5,7 @@ import SwiftData
 struct LinkifyApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            LinkItem.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -26,6 +19,7 @@ struct LinkifyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .frame(minWidth: 700, minHeight: 500)
         }
         .modelContainer(sharedModelContainer)
     }
